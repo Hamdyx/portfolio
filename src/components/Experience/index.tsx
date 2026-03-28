@@ -14,7 +14,7 @@ export default function Experience() {
     content: (
       <div className={styles.item}>
         <div className={styles.itemHeader}>
-          <Title className={styles.itemTitle} level={4}>
+          <Title className={styles.itemTitle} level={3}>
             {item.title}
           </Title>
           <Text className={item.current ? styles.periodCurrent : styles.period}>{item.period}</Text>

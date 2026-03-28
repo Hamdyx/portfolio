@@ -44,6 +44,11 @@
   color: #4f46e5;
 }
 
+.linkActive {
+  color: #4f46e5;
+  font-weight: 600;
+}
+
 .menuButton {
   display: none !important;
 }
@@ -66,6 +71,11 @@
 
 .drawerLink:hover {
   color: #4f46e5;
+}
+
+.drawerLinkActive {
+  color: #4f46e5;
+  border-bottom-color: #4f46e5;
 }
 
 @media (max-width: 768px) {

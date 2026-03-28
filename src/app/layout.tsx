@@ -4,6 +4,8 @@ import { AntdRegistry } from '@ant-design/nextjs-registry';
 import { ConfigProvider } from 'antd';
 import { Geist, Geist_Mono } from 'next/font/google';
 
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
 import { theme } from '@/config/theme';
 
 import './globals.css';
@@ -32,7 +34,11 @@ export default function RootLayout({
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body>
         <AntdRegistry>
-          <ConfigProvider theme={theme}>{children}</ConfigProvider>
+          <ConfigProvider theme={theme}>
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+          </ConfigProvider>
         </AntdRegistry>
       </body>
     </html>

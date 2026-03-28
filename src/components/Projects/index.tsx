@@ -44,7 +44,7 @@ export default function Projects() {
                   </div>
                 }
               >
-                <Title className={styles.cardTitle} level={4}>
+                <Title className={styles.cardTitle} level={3}>
                   {project.title}
                 </Title>
                 <Paragraph className={styles.cardDescription}>{project.description}</Paragraph>
