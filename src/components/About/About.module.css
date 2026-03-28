@@ -19,7 +19,7 @@
 .heading {
   font-size: 2.5rem !important;
   font-weight: 700 !important;
-  letter-spacing: -0.03em !important;
+  letter-spacing: -0.03em;
   margin-bottom: 32px !important;
 }
 
