@@ -13,14 +13,47 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - **Framework:** Next.js 16 (App Router only — no Pages Router)
 - **Language:** TypeScript (strict mode)
 - **Package Manager:** Yarn 4.13.0 (Berry, via Corepack)
-- **UI Library:** Ant Design 6
+- **UI Library:** Ant Design 6 (`antd`, `@ant-design/icons`, `@ant-design/nextjs-registry`)
 - **Styling:** CSS Modules (no Tailwind, no styled-components)
+- **Fonts:** Geist Sans & Geist Mono via `next/font/google`
 - **Import Alias:** `@/*` → `./src/*`
 - **React Compiler:** Enabled
 
 ## Project Structure
 
 All source code lives under `src/`. The app uses the Next.js App Router (`src/app/`).
+
+```
+src/
+├── app/
+│   ├── layout.tsx          # Root layout — AntdRegistry, ConfigProvider, fonts, metadata
+│   ├── page.tsx            # Home page — composes all section components
+│   ├── globals.css         # Global resets and base styles
+│   └── page.module.css
+├── components/             # Each component: index.tsx + ComponentName.module.css
+│   ├── Navbar/             # Fixed nav bar with mobile Drawer
+│   ├── Hero/               # Full-viewport intro section
+│   ├── About/              # Bio, details, resume download
+│   ├── Experience/         # Ant Design Timeline of work history
+│   ├── Skills/             # Categorized grid (Row/Col/Card)
+│   ├── Projects/           # Project cards with demo/GitHub links
+│   ├── Contact/            # Ant Design Form with validation
+│   └── Footer/             # Social links and copyright
+├── config/
+│   └── theme.ts            # Ant Design ThemeConfig tokens
+└── constants/              # All display data — edit these to update content
+    ├── personal.ts         # Name, tagline, subtitle, social handles, email
+    ├── experience.ts       # Work history (ExperienceItem[])
+    ├── skills.ts           # Skills with categories (SkillItem[])
+    └── projects.ts         # Projects with descriptions and URLs (ProjectItem[])
+```
+
+## Architecture Notes
+
+- **All components use `'use client'`** — required because Ant Design uses React hooks internally.
+- **Data-driven UI** — components read from `src/constants/`. To update content (projects, skills, experience), edit the constants files only.
+- **Single-page layout** — `page.tsx` composes sections in order: Navbar → Hero → About → Experience → Skills → Projects → Contact → Footer.
+- **SSR style extraction** — `@ant-design/nextjs-registry` wraps children in the root layout. Do not remove `<AntdRegistry>` from `layout.tsx`.
 
 ## Conventions
 
@@ -47,12 +80,11 @@ const { Text } = Typography;
 <Typography.Text>Hello</Typography.Text>
 ```
 
-`@ant-design/nextjs-registry` wraps children in the root layout for SSR style extraction. Do not remove `<AntdRegistry>` from `layout.tsx`.
-
 ### Styling
 
 - Use CSS Modules (`.module.css`) for custom component styles.
-- Use Ant Design's `ConfigProvider` theme tokens for design system overrides.
+- Use Ant Design's `ConfigProvider` theme tokens (in `src/config/theme.ts`) for design system overrides.
+- Primary color: `#4f46e5`. Background: `#f9f9ff`. Text: `#151c27`.
 - Do NOT add Tailwind CSS or styled-components.
 
 ### Import Order (enforced by ESLint)

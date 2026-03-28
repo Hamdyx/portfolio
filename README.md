@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# hamdyx
+
+Personal portfolio website for **Ahmed Hamdy** — Software Engineer with 6+ years of experience building web applications across fintech, travel, and enterprise domains.
+
+## Tech Stack
+
+| Category        | Technology                                |
+| --------------- | ----------------------------------------- |
+| Framework       | Next.js 16 (App Router)                   |
+| Language        | TypeScript (strict mode)                  |
+| UI Library      | Ant Design 6                              |
+| Styling         | CSS Modules                               |
+| Fonts           | Geist Sans & Geist Mono (via `next/font`) |
+| Package Manager | Yarn 4.13.0 (Berry, via Corepack)         |
+| React Compiler  | Enabled                                   |
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── layout.tsx          # Root layout (AntdRegistry + ConfigProvider + fonts)
+│   ├── page.tsx            # Home — composes all section components
+│   ├── globals.css         # Global resets and base styles
+│   └── page.module.css
+├── components/
+│   ├── Navbar/             # Fixed nav with mobile drawer
+│   ├── Hero/               # Full-viewport intro with socials
+│   ├── About/              # Bio, location, email, resume download
+│   ├── Experience/         # Timeline of work history
+│   ├── Skills/             # Categorized tech stack grid
+│   ├── Projects/           # Project cards with demo/GitHub links
+│   ├── Contact/            # Contact form
+│   └── Footer/             # Social links and copyright
+├── config/
+│   └── theme.ts            # Ant Design theme tokens
+└── constants/
+    ├── personal.ts         # Name, tagline, social handles
+    ├── experience.ts       # Work history entries
+    ├── skills.ts           # Skills with categories
+    └── projects.ts         # Project titles, descriptions, URLs
+```
+
+Each component follows the pattern: `ComponentName/index.tsx` + `ComponentName/ComponentName.module.css`.
 
 ## Getting Started
 
-First, run the development server:
+**Prerequisites:** Node.js 18+ and Corepack enabled.
 
 ```bash
-npm run dev
-# or
+# Enable Corepack (activates the pinned Yarn version)
+corepack enable
+
+# Install dependencies
+yarn install
+
+# Start development server
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command      | Description            |
+| ------------ | ---------------------- |
+| `yarn dev`   | Start dev server       |
+| `yarn build` | Production build       |
+| `yarn start` | Serve production build |
+| `yarn lint`  | Run ESLint             |
 
-## Learn More
+## License
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Private — not open source.
