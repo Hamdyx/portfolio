@@ -1,8 +1,10 @@
 'use client';
 
-import { CloseOutlined, MenuOutlined } from '@ant-design/icons';
+import { CloseOutlined, MenuOutlined, MoonOutlined, SunOutlined } from '@ant-design/icons';
 import { Button, Drawer } from 'antd';
 import { useEffect, useState } from 'react';
+
+import { useTheme } from '@/hooks/useTheme';
 
 import styles from './Navbar.module.css';
 
@@ -19,6 +21,7 @@ const SECTION_IDS = NAV_LINKS.map(link => link.href.slice(1));
 export default function Navbar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const { isDark, toggle } = useTheme();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -52,6 +55,7 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
+          <Button type="text" shape="circle" icon={isDark ? <SunOutlined /> : <MoonOutlined />} onClick={toggle} aria-label="Toggle theme" />
           <Button type="primary" shape="round" href="/resume.pdf">
             Resume
           </Button>
@@ -71,6 +75,9 @@ export default function Navbar() {
             ))}
             <Button type="primary" block href="/resume.pdf">
               Resume
+            </Button>
+            <Button type="default" block icon={isDark ? <SunOutlined /> : <MoonOutlined />} onClick={toggle}>
+              {isDark ? 'Light Mode' : 'Dark Mode'}
             </Button>
           </div>
         </Drawer>

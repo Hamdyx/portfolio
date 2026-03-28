@@ -1,3 +1,75 @@
+/* ===== Light Theme (default) ===== */
+:root {
+  --color-primary: #4f46e5;
+  --color-primary-hover: #3525cd;
+  --color-bg: #f9f9ff;
+  --color-text: #151c27;
+  --color-text-secondary: #464555;
+  --color-text-tertiary: #777587;
+  --color-surface-alt1: #f0f3ff;
+  --color-surface-alt2: #e7eefe;
+  --color-surface-container: #f0f3ff;
+  --color-surface-high: #f9f9ff;
+  --color-surface-highest: #ffffff;
+  --color-nav-bg: rgba(255, 255, 255, 0.7);
+  --color-nav-shadow: rgba(0, 0, 0, 0.08);
+  --color-border: #e7eefe;
+  --color-hero-bg: #151c27;
+  --color-hero-overlay-start: #3525cd;
+  --color-hero-overlay-mid: #4f46e5;
+  --color-hero-overlay-end: #151c27;
+  --color-hero-text: #ffffff;
+  --color-hero-tagline: #c3c0ff;
+  --color-hero-subtitle: #dce2f3;
+  --color-hero-social: #ffffff;
+  --color-hero-social-hover: #c3c0ff;
+  --color-hero-scroll: rgba(255, 255, 255, 0.5);
+  --color-icon-bg: #e7eefe;
+  --color-footer-bg: #f0f3ff;
+  --color-card-shadow: rgba(79, 70, 229, 0.08);
+  --color-card-hover-shadow: rgba(0, 0, 0, 0.15);
+  --color-placeholder-start: #e2e8f8;
+  --color-placeholder-end: #c7c4d8;
+  --color-timeline-active: #4f46e5;
+  --color-timeline-inactive: #c7c4d8;
+}
+
+/* ===== Dark Theme ===== */
+[data-theme='dark'] {
+  --color-primary: #a3a6ff;
+  --color-primary-hover: #8387ff;
+  --color-bg: #060e20;
+  --color-text: #dee5ff;
+  --color-text-secondary: #a3aac4;
+  --color-text-tertiary: #6d758c;
+  --color-surface-alt1: #091328;
+  --color-surface-alt2: #0f1930;
+  --color-surface-container: #0f1930;
+  --color-surface-high: #141f38;
+  --color-surface-highest: #192540;
+  --color-nav-bg: rgba(6, 14, 32, 0.7);
+  --color-nav-shadow: rgba(0, 0, 0, 0.3);
+  --color-border: #40485d;
+  --color-hero-bg: #060e20;
+  --color-hero-overlay-start: #a3a6ff;
+  --color-hero-overlay-mid: #4f46e5;
+  --color-hero-overlay-end: #060e20;
+  --color-hero-text: #dee5ff;
+  --color-hero-tagline: #a3a6ff;
+  --color-hero-subtitle: #a3aac4;
+  --color-hero-social: #dee5ff;
+  --color-hero-social-hover: #a3a6ff;
+  --color-hero-scroll: rgba(222, 229, 255, 0.5);
+  --color-icon-bg: rgba(163, 166, 255, 0.1);
+  --color-footer-bg: #000000;
+  --color-card-shadow: rgba(163, 166, 255, 0.08);
+  --color-card-hover-shadow: rgba(0, 0, 0, 0.4);
+  --color-placeholder-start: #192540;
+  --color-placeholder-end: #0f1930;
+  --color-timeline-active: #a3a6ff;
+  --color-timeline-inactive: #40485d;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -16,8 +88,8 @@ body {
 }
 
 body {
-  color: #151c27;
-  background: #f9f9ff;
+  color: var(--color-text);
+  background: var(--color-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

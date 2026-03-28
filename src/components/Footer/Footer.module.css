@@ -1,6 +1,6 @@
 .footer {
   padding: 48px 0;
-  background: #f0f3ff;
+  background: var(--color-footer-bg);
 }
 
 .container {
@@ -19,12 +19,12 @@
   text-transform: uppercase;
   letter-spacing: 0.15em;
   font-weight: 600 !important;
-  color: #777587 !important;
+  color: var(--color-text-tertiary) !important;
 }
 
 .link {
   font-size: 18px;
-  color: #777587;
+  color: var(--color-text-tertiary);
   transition:
     color 0.2s,
     transform 0.2s;
@@ -32,7 +32,7 @@
 }
 
 .link:hover {
-  color: #4f46e5;
+  color: var(--color-primary);
   transform: translateY(-2px);
 }
 

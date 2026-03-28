@@ -1,6 +1,6 @@
 .section {
   padding: 128px 0;
-  background: #e7eefe;
+  background: var(--color-surface-alt2);
 }
 
 .container {
@@ -24,7 +24,7 @@
 }
 
 .subheading {
-  color: #464555 !important;
+  color: var(--color-text-secondary) !important;
 }
 
 .card {
@@ -40,7 +40,7 @@
 }
 
 .card:hover {
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 20px 60px var(--color-card-hover-shadow) !important;
   transform: translateY(-8px);
 }
 
@@ -71,7 +71,7 @@
 }
 
 .cardDescription {
-  color: #464555 !important;
+  color: var(--color-text-secondary) !important;
   font-size: 14px !important;
   flex-grow: 1;
 }

@@ -1,6 +1,6 @@
 .section {
   padding: 128px 0;
-  background: #f0f3ff;
+  background: var(--color-surface-alt1);
 }
 
 .container {
@@ -24,7 +24,7 @@
 .divider {
   width: 64px;
   height: 4px;
-  background: #4f46e5;
+  background: var(--color-primary);
   margin: 0 auto;
   border-radius: 2px;
 }
@@ -56,24 +56,24 @@
 .period {
   font-size: 13px !important;
   font-weight: 600 !important;
-  color: #777587 !important;
+  color: var(--color-text-tertiary) !important;
 }
 
 .periodCurrent {
   font-size: 13px !important;
   font-weight: 600 !important;
-  color: #4f46e5 !important;
+  color: var(--color-primary) !important;
 }
 
 .company {
   display: block;
-  color: #464555 !important;
+  color: var(--color-text-secondary) !important;
   font-weight: 500 !important;
   margin-bottom: 12px;
 }
 
 .description {
-  color: #464555 !important;
+  color: var(--color-text-secondary) !important;
   line-height: 1.75 !important;
 }
 

@@ -1,6 +1,6 @@
 .section {
   padding: 128px 0;
-  background: #f9f9ff;
+  background: var(--color-bg);
 }
 
 .container {
@@ -22,11 +22,11 @@
 }
 
 .subheading {
-  color: #464555 !important;
+  color: var(--color-text-secondary) !important;
 }
 
 .formWrapper {
-  background: #f0f3ff;
+  background: var(--color-surface-alt1);
   padding: 40px;
   border-radius: 16px;
 }

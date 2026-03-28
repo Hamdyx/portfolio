@@ -6,13 +6,13 @@
   justify-content: center;
   padding-top: 72px;
   overflow: hidden;
-  background: #151c27;
+  background: var(--color-hero-bg);
 }
 
 .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #3525cd 0%, #4f46e5 50%, #151c27 100%);
+  background: linear-gradient(135deg, var(--color-hero-overlay-start) 0%, var(--color-hero-overlay-mid) 50%, var(--color-hero-overlay-end) 100%);
   opacity: 0.3;
 }
 
@@ -27,7 +27,7 @@
 
 .tagline {
   display: block;
-  color: #c3c0ff !important;
+  color: var(--color-hero-tagline) !important;
   font-size: 13px !important;
   font-weight: 600 !important;
   letter-spacing: 0.15em;
@@ -36,7 +36,7 @@
 }
 
 .name {
-  color: #ffffff !important;
+  color: var(--color-hero-text) !important;
   font-size: clamp(3rem, 8vw, 6rem) !important;
   font-weight: 700 !important;
   letter-spacing: -0.04em !important;
@@ -45,7 +45,7 @@
 }
 
 .subtitle {
-  color: #dce2f3 !important;
+  color: var(--color-hero-subtitle) !important;
   font-size: clamp(1.125rem, 2vw, 1.5rem) !important;
   font-weight: 300 !important;
   max-width: 640px;
@@ -61,14 +61,14 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: #ffffff;
+  color: var(--color-hero-social);
   font-weight: 500;
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .socialLink:hover {
-  color: #c3c0ff;
+  color: var(--color-hero-social-hover);
 }
 
 .scrollIndicator {
@@ -80,13 +80,13 @@
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--color-hero-scroll);
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .scrollLink:hover {
-  color: #ffffff;
+  color: var(--color-hero-text);
 }
 
 .scrollText {
