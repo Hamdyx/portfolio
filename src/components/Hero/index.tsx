@@ -2,6 +2,7 @@
 
 import { DownOutlined, GithubOutlined, LinkedinOutlined } from '@ant-design/icons';
 import { Space, Typography } from 'antd';
+import Image from 'next/image';
 
 import { PERSONAL } from '@/constants/personal';
 
@@ -12,7 +13,9 @@ const { Title, Paragraph, Text } = Typography;
 export default function Hero() {
   return (
     <section className={styles.hero} id="home">
-      <div className={styles.overlay} />
+      <div className={styles.overlay}>
+        <Image src="/hero-bg.webp" alt="" fill sizes="100vw" priority />
+      </div>
       <div className={styles.container}>
         <Text className={styles.tagline}>{PERSONAL.tagline}</Text>
         <Title className={styles.name} level={1}>
