@@ -2,6 +2,7 @@
 
 import { ArrowRightOutlined } from '@ant-design/icons';
 import { Button, Card, Col, Row, Typography } from 'antd';
+import Image from 'next/image';
 
 import { PROJECTS } from '@/constants/projects';
 
@@ -34,17 +35,18 @@ export default function Projects() {
                 className={styles.card}
                 hoverable
                 cover={
-                  <div
-                    className={styles.cover}
-                    style={{
-                      background: GRADIENTS[index % GRADIENTS.length],
-                    }}
-                  >
-                    <span className={styles.coverText}>{project.title}</span>
-                  </div>
+                  project.image ? (
+                    <div className={styles.cover}>
+                      <Image src={project.image} alt={project.title} fill sizes="(max-width: 768px) 100vw, 33vw" />
+                    </div>
+                  ) : (
+                    <div className={styles.cover} style={{ background: GRADIENTS[index % GRADIENTS.length] }}>
+                      <span className={styles.coverText}>{project.title}</span>
+                    </div>
+                  )
                 }
               >
-                <Title className={styles.cardTitle} level={4}>
+                <Title className={styles.cardTitle} level={3}>
                   {project.title}
                 </Title>
                 <Paragraph className={styles.cardDescription}>{project.description}</Paragraph>

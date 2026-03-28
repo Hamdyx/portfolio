@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 
-import { AntdRegistry } from '@ant-design/nextjs-registry';
-import { ConfigProvider } from 'antd';
 import { Geist, Geist_Mono } from 'next/font/google';
 
-import { theme } from '@/config/theme';
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
+import ThemeProvider from '@/providers/ThemeProvider';
 
 import './globals.css';
 
@@ -23,17 +23,32 @@ export const metadata: Metadata = {
   description: 'Personal portfolio of Ahmed Hamdy — Software Engineer specializing in React, TypeScript, and modern frontend architecture.',
 };
 
+const themeInitScript = `
+(function() {
+  try {
+    var stored = localStorage.getItem('theme-preference');
+    var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  } catch(e) {}
+})();
+`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body>
-        <AntdRegistry>
-          <ConfigProvider theme={theme}>{children}</ConfigProvider>
-        </AntdRegistry>
+        <ThemeProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

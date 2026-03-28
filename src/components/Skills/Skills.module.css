@@ -1,6 +1,6 @@
 .section {
   padding: 128px 0;
-  background: #f9f9ff;
+  background: var(--color-bg);
 }
 
 .container {
@@ -12,7 +12,7 @@
 .heading {
   font-size: 2rem !important;
   font-weight: 700 !important;
-  letter-spacing: -0.03em !important;
+  letter-spacing: -0.03em;
   text-align: center;
   margin-bottom: 48px !important;
 }
@@ -31,7 +31,7 @@
 }
 
 .card:hover {
-  box-shadow: 0 8px 30px rgba(79, 70, 229, 0.08) !important;
+  box-shadow: 0 8px 30px var(--color-card-shadow) !important;
   transform: translateY(-2px);
 }
 
@@ -45,7 +45,7 @@
 .skillName {
   font-size: 0.85rem !important;
   font-weight: 700 !important;
-  color: #151c27 !important;
+  color: var(--color-text) !important;
 }
 
 .skillCategory {
@@ -53,7 +53,7 @@
   text-transform: uppercase;
   letter-spacing: 0.15em;
   font-weight: 700 !important;
-  color: #777587 !important;
+  color: var(--color-text-tertiary) !important;
 }
 
 @media (max-width: 768px) {

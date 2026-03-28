@@ -1,6 +1,6 @@
 .section {
   padding: 128px 0;
-  background: #f9f9ff;
+  background: var(--color-bg);
 }
 
 .container {
@@ -17,16 +17,16 @@
 .heading {
   font-size: 2.5rem !important;
   font-weight: 700 !important;
-  letter-spacing: -0.03em !important;
+  letter-spacing: -0.03em;
   margin-bottom: 16px !important;
 }
 
 .subheading {
-  color: #464555 !important;
+  color: var(--color-text-secondary) !important;
 }
 
 .formWrapper {
-  background: #f0f3ff;
+  background: var(--color-surface-alt1);
   padding: 40px;
   border-radius: 16px;
 }
