@@ -1,0 +1,128 @@
+.section {
+  padding: 128px 0;
+  background: #f9f9ff;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.heading {
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.03em !important;
+  margin-bottom: 32px !important;
+}
+
+.bio {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.text {
+  color: #464555 !important;
+  font-size: 1.125rem !important;
+  line-height: 1.75 !important;
+}
+
+.details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.detailItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.detailIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: #e7eefe;
+  border-radius: 12px;
+  color: #4f46e5;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.detailLabel {
+  display: block;
+  font-size: 11px !important;
+  text-transform: uppercase;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em;
+  color: #777587 !important;
+}
+
+.detailValue {
+  display: block;
+  font-weight: 500 !important;
+  color: #151c27 !important;
+}
+
+.resumeButton {
+  margin-top: 48px;
+  height: 52px !important;
+  padding: 0 32px !important;
+  font-weight: 700 !important;
+  border-radius: 12px !important;
+}
+
+.imageContainer {
+  position: relative;
+}
+
+.imagePlaceholder {
+  aspect-ratio: 4 / 5;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #e2e8f8 0%, #c7c4d8 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.initials {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #4f46e5;
+  opacity: 0.3;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 0;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .imageContainer {
+    order: -1;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .details {
+    flex-direction: column;
+    gap: 24px;
+  }
+}

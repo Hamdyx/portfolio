@@ -1,0 +1,89 @@
+.section {
+  padding: 128px 0;
+  background: #f0f3ff;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.heading {
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.03em !important;
+  margin-bottom: 16px !important;
+}
+
+.divider {
+  width: 64px;
+  height: 4px;
+  background: #4f46e5;
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.timeline {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.item {
+  padding-bottom: 16px;
+}
+
+.itemHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.itemTitle {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 0 !important;
+}
+
+.period {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #777587 !important;
+}
+
+.periodCurrent {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #4f46e5 !important;
+}
+
+.company {
+  display: block;
+  color: #464555 !important;
+  font-weight: 500 !important;
+  margin-bottom: 12px;
+}
+
+.description {
+  color: #464555 !important;
+  line-height: 1.75 !important;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 0;
+  }
+
+  .itemHeader {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
