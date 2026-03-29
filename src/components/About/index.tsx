@@ -2,6 +2,7 @@
 
 import { DownloadOutlined, EnvironmentOutlined, MailOutlined } from '@ant-design/icons';
 import { Button, Typography } from 'antd';
+import Image from 'next/image';
 
 import { PERSONAL } from '@/constants/personal';
 
@@ -54,7 +55,7 @@ export default function About() {
           </div>
           <div className={styles.imageContainer}>
             <div className={styles.imagePlaceholder}>
-              <span className={styles.initials}>AH</span>
+              <Image src="/profile-pic--removebg.webp" alt="Ahmed Hamdy" width={450} height={450} className={styles.profileImage} />
             </div>
           </div>
         </div>

@@ -15,6 +15,8 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - **Package Manager:** Yarn 4.13.0 (Berry, via Corepack)
 - **UI Library:** Ant Design 6 (`antd`, `@ant-design/icons`, `@ant-design/nextjs-registry`)
 - **Styling:** CSS Modules (no Tailwind, no styled-components)
+- **Email:** Resend (`resend`) — contact form emails
+- **Analytics:** Vercel Analytics (`@vercel/analytics`)
 - **Fonts:** Geist Sans & Geist Mono via `next/font/google`
 - **Import Alias:** `@/*` → `./src/*`
 - **React Compiler:** Enabled
@@ -26,6 +28,9 @@ All source code lives under `src/`. The app uses the Next.js App Router (`src/ap
 ```
 src/
 ├── app/
+│   ├── api/
+│   │   └── contact/
+│   │       └── route.ts    # POST handler — sends email via Resend
 │   ├── layout.tsx          # Root layout — AntdRegistry, ConfigProvider, fonts, metadata
 │   ├── page.tsx            # Home page — composes all section components
 │   ├── globals.css         # Global resets and base styles
@@ -37,15 +42,20 @@ src/
 │   ├── Experience/         # Ant Design Timeline of work history
 │   ├── Skills/             # Categorized grid (Row/Col/Card)
 │   ├── Projects/           # Project cards with demo/GitHub links
-│   ├── Contact/            # Ant Design Form with validation
+│   ├── Contact/            # Ant Design Form with Resend email submission
 │   └── Footer/             # Social links and copyright
 ├── config/
 │   └── theme.ts            # Ant Design ThemeConfig tokens
-└── constants/              # All display data — edit these to update content
-    ├── personal.ts         # Name, tagline, subtitle, social handles, email
-    ├── experience.ts       # Work history (ExperienceItem[])
-    ├── skills.ts           # Skills with categories (SkillItem[])
-    └── projects.ts         # Projects with descriptions and URLs (ProjectItem[])
+├── constants/              # All display data — edit these to update content
+│   ├── personal.ts         # Name, tagline, subtitle, social handles, email
+│   ├── experience.ts       # Work history (ExperienceItem[])
+│   ├── skills.ts           # Skills with categories (SkillItem[])
+│   └── projects.ts         # Projects with descriptions and URLs (ProjectItem[])
+├── hooks/
+│   └── useTheme.ts         # Theme hook
+└── providers/
+    ├── ThemeContext.ts      # Theme context definition
+    └── ThemeProvider.tsx    # Theme context provider
 ```
 
 ## Architecture Notes
@@ -54,6 +64,7 @@ src/
 - **Data-driven UI** — components read from `src/constants/`. To update content (projects, skills, experience), edit the constants files only.
 - **Single-page layout** — `page.tsx` composes sections in order: Navbar → Hero → About → Experience → Skills → Projects → Contact → Footer.
 - **SSR style extraction** — `@ant-design/nextjs-registry` wraps children in the root layout. Do not remove `<AntdRegistry>` from `layout.tsx`.
+- **Contact form** — submits via `POST /api/contact` Route Handler, which sends email through Resend. Requires `RESEND_API_KEY`, `RESEND_FROM_EMAIL`, and `CONTACT_TO_EMAIL` environment variables.
 
 ## Conventions
 

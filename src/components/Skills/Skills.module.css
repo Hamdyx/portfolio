@@ -42,18 +42,15 @@
   gap: 4px;
 }
 
+.skillIcon {
+  font-size: 28px;
+  color: var(--color-primary);
+}
+
 .skillName {
   font-size: 0.85rem !important;
   font-weight: 700 !important;
   color: var(--color-text) !important;
-}
-
-.skillCategory {
-  font-size: 9px !important;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  font-weight: 700 !important;
-  color: var(--color-text-tertiary) !important;
 }
 
 @media (max-width: 768px) {

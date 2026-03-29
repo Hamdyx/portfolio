@@ -89,20 +89,17 @@
 }
 
 .imagePlaceholder {
-  aspect-ratio: 4 / 5;
+  max-width: 450px;
   border-radius: 16px;
   overflow: hidden;
-  background: linear-gradient(135deg, var(--color-placeholder-start) 0%, var(--color-placeholder-end) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #a78bfa 100%);
 }
 
-.initials {
-  font-size: 4rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  opacity: 0.3;
+.profileImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
 }
 
 @media (max-width: 768px) {
