@@ -16,16 +16,19 @@ export default function Skills() {
           Tech Stack &amp; Mastery
         </Title>
         <Row gutter={[12, 12]}>
-          {SKILLS.map(skill => (
-            <Col key={skill.name} xs={8} sm={6} md={4}>
-              <Card className={styles.card} hoverable>
-                <div className={styles.cardContent}>
-                  <Text className={styles.skillName}>{skill.name}</Text>
-                  <Text className={styles.skillCategory}>{skill.category}</Text>
-                </div>
-              </Card>
-            </Col>
-          ))}
+          {SKILLS.map(skill => {
+            const Icon = skill.icon;
+            return (
+              <Col key={skill.name} xs={8} sm={6} md={4}>
+                <Card className={styles.card} hoverable>
+                  <div className={styles.cardContent}>
+                    <Icon className={styles.skillIcon} />
+                    <Text className={styles.skillName}>{skill.name}</Text>
+                  </div>
+                </Card>
+              </Col>
+            );
+          })}
         </Row>
       </div>
     </section>
