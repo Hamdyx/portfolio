@@ -4,12 +4,15 @@ import { FaAws } from 'react-icons/fa';
 import {
   SiAntdesign,
   SiBlockchaindotcom,
+  SiClaude,
   SiCss,
   SiCypress,
   SiDocker,
   SiExpress,
   SiFigma,
   SiGit,
+  SiGithubactions,
+  SiGithubcopilot,
   SiGraphql,
   SiHtml5,
   SiJenkins,
@@ -20,8 +23,11 @@ import {
   SiMysql,
   SiNextdotjs,
   SiNodedotjs,
+  SiOpenai,
+  SiPostgresql,
   SiPython,
   SiReact,
+  SiRedis,
   SiRedux,
   SiSass,
   SiSentry,
@@ -62,7 +68,9 @@ export const SKILLS: SkillItem[] = [
 
   // Databases
   { name: 'MongoDB', icon: SiMongodb },
+  { name: 'PostgreSQL', icon: SiPostgresql },
   { name: 'MySQL', icon: SiMysql },
+  { name: 'Redis', icon: SiRedis },
 
   // Testing
   { name: 'Jest', icon: SiJest },
@@ -72,6 +80,7 @@ export const SKILLS: SkillItem[] = [
   { name: 'Git', icon: SiGit },
   { name: 'Docker', icon: SiDocker },
   { name: 'AWS', icon: FaAws },
+  { name: 'GitHub Actions', icon: SiGithubactions },
   { name: 'Jenkins', icon: SiJenkins },
   { name: 'Vercel', icon: SiVercel },
   { name: 'Sentry', icon: SiSentry },
@@ -82,4 +91,9 @@ export const SKILLS: SkillItem[] = [
   { name: 'Jira', icon: SiJira },
   { name: 'SEO', icon: TbSeo },
   { name: 'Blockchain', icon: SiBlockchaindotcom },
+
+  // AI Tools
+  { name: 'GitHub Copilot', icon: SiGithubcopilot },
+  { name: 'ChatGPT', icon: SiOpenai },
+  { name: 'Claude', icon: SiClaude },
 ];
