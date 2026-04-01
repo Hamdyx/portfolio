@@ -49,7 +49,7 @@ export default function About() {
                 </div>
               </div>
             </div>
-            <Button type="primary" size="large" icon={<DownloadOutlined />} className={styles.resumeButton} href="/resume.pdf">
+            <Button type="primary" size="large" icon={<DownloadOutlined />} className={styles.resumeButton} href="/Ahmed_Hamdy_Resume.pdf" download>
               Download Resume
             </Button>
           </div>

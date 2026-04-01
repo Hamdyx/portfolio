@@ -12,7 +12,7 @@ export const EXPERIENCE: ExperienceItem[] = [
     company: 'Secret Escapes',
     period: 'Feb 2025 — Present',
     description:
-      'Led the adoption and customization of AI developer tools, including implementing Copilot custom instructions and configuring the code review agent, enhancing engineering productivity and code quality standards across the team while increasing unit test coverage to 100%.',
+      'Championed AI developer tooling adoption across the team and enhanced shared UI components within the monorepo, accelerating delivery across multiple internal tools handling complex forms and workflows.',
     current: true,
   },
   {

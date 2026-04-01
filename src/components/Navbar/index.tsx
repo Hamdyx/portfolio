@@ -56,7 +56,7 @@ export default function Navbar() {
             </a>
           ))}
           <Button type="text" shape="circle" icon={isDark ? <SunOutlined /> : <MoonOutlined />} onClick={toggle} aria-label="Toggle theme" />
-          <Button type="primary" shape="round" href="/resume.pdf">
+          <Button type="primary" shape="round" href="/Ahmed_Hamdy_Resume.pdf">
             Resume
           </Button>
         </div>
@@ -73,7 +73,7 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            <Button type="primary" block href="/resume.pdf">
+            <Button type="primary" block href="/Ahmed_Hamdy_Resume.pdf">
               Resume
             </Button>
             <Button type="default" block icon={isDark ? <SunOutlined /> : <MoonOutlined />} onClick={toggle}>
