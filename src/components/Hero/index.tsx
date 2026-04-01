@@ -23,10 +23,10 @@ export default function Hero() {
         </Title>
         <Paragraph className={styles.subtitle}>{PERSONAL.subtitle}</Paragraph>
         <Space size="large" wrap className={styles.socials}>
-          <a className={styles.socialLink} href={PERSONAL.github} target="_blank" rel="noopener noreferrer">
+          <a className={styles.socialLink} href={PERSONAL.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
             <GithubOutlined /> GitHub / {PERSONAL.githubHandle}
           </a>
-          <a className={styles.socialLink} href={PERSONAL.linkedin} target="_blank" rel="noopener noreferrer">
+          <a className={styles.socialLink} href={PERSONAL.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
             <LinkedinOutlined /> LinkedIn / {PERSONAL.linkedinHandle}
           </a>
         </Space>

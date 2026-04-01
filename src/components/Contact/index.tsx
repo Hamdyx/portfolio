@@ -82,7 +82,7 @@ export default function Contact() {
               <Row gutter={24}>
                 <Col xs={24} md={12}>
                   <Item name="name" label="Full Name" rules={[{ required: true, message: 'Please enter your name' }]}>
-                    <Input placeholder="John Doe" disabled={loading} />
+                    <Input placeholder="John Doe" autoComplete="name" disabled={loading} />
                   </Item>
                 </Col>
                 <Col xs={24} md={12}>
@@ -94,12 +94,12 @@ export default function Contact() {
                       { type: 'email', message: 'Please enter a valid email' },
                     ]}
                   >
-                    <Input placeholder="john@example.com" disabled={loading} />
+                    <Input placeholder="john@example.com" autoComplete="email" disabled={loading} />
                   </Item>
                 </Col>
               </Row>
               <Item name="subject" label="Subject" rules={[{ required: true, message: 'Please enter a subject' }]}>
-                <Input placeholder="Project Inquiry" disabled={loading} />
+                <Input placeholder="Project Inquiry" autoComplete="off" disabled={loading} />
               </Item>
               <Item name="message" label="Message" rules={[{ required: true, message: 'Please enter your message' }]}>
                 <TextArea rows={4} placeholder="How can I help you?" disabled={loading} />

@@ -30,10 +30,15 @@ src/
 ├── app/
 │   ├── api/
 │   │   └── contact/
-│   │       └── route.ts    # POST handler — sends email via Resend
-│   ├── layout.tsx          # Root layout — AntdRegistry, ConfigProvider, fonts, metadata
+│   │       └── route.ts    # POST handler — sends email via Resend (rate-limited)
+│   ├── layout.tsx          # Root layout — ThemeProvider, fonts, metadata, viewport, JSON-LD
 │   ├── page.tsx            # Home page — composes all section components
-│   ├── globals.css         # Global resets and base styles
+│   ├── globals.css         # Global resets, theme variables (light + dark), base styles
+│   ├── loading.tsx         # Skeleton loading state (Ant Design Skeleton)
+│   ├── not-found.tsx       # Custom 404 page
+│   ├── robots.ts           # robots.txt generation (points to sitemap)
+│   ├── sitemap.ts          # sitemap.xml generation
+│   ├── manifest.ts         # PWA web manifest
 │   └── page.module.css
 ├── components/             # Each component: index.tsx + ComponentName.module.css
 │   ├── Navbar/             # Fixed nav bar with mobile Drawer
@@ -45,9 +50,9 @@ src/
 │   ├── Contact/            # Ant Design Form with Resend email submission
 │   └── Footer/             # Social links and copyright
 ├── config/
-│   └── theme.ts            # Ant Design ThemeConfig tokens
+│   └── theme.ts            # Ant Design ThemeConfig tokens (light + dark)
 ├── constants/              # All display data — edit these to update content
-│   ├── personal.ts         # Name, tagline, subtitle, social handles, email
+│   ├── personal.ts         # Name, tagline, subtitle, social handles, email, website
 │   ├── experience.ts       # Work history (ExperienceItem[])
 │   ├── skills.ts           # Skills with categories (SkillItem[])
 │   └── projects.ts         # Projects with descriptions and URLs (ProjectItem[])
@@ -55,7 +60,7 @@ src/
 │   └── useTheme.ts         # Theme hook
 └── providers/
     ├── ThemeContext.ts      # Theme context definition
-    └── ThemeProvider.tsx    # Theme context provider
+    └── ThemeProvider.tsx    # Theme provider (AntdRegistry + ConfigProvider)
 ```
 
 ## Architecture Notes
@@ -63,8 +68,11 @@ src/
 - **All components use `'use client'`** — required because Ant Design uses React hooks internally.
 - **Data-driven UI** — components read from `src/constants/`. To update content (projects, skills, experience), edit the constants files only.
 - **Single-page layout** — `page.tsx` composes sections in order: Navbar → Hero → About → Experience → Skills → Projects → Contact → Footer.
-- **SSR style extraction** — `@ant-design/nextjs-registry` wraps children in the root layout. Do not remove `<AntdRegistry>` from `layout.tsx`.
-- **Contact form** — submits via `POST /api/contact` Route Handler, which sends email through Resend. Requires `RESEND_API_KEY`, `RESEND_FROM_EMAIL`, and `CONTACT_TO_EMAIL` environment variables.
+- **SSR style extraction** — `@ant-design/nextjs-registry` wraps `ConfigProvider` inside `ThemeProvider.tsx`. Do not remove `<AntdRegistry>` from `ThemeProvider.tsx`. Do NOT add a second `<AntdRegistry>` in `layout.tsx`.
+- **Contact form** — submits via `POST /api/contact` Route Handler, which sends email through Resend. Rate-limited to 3 requests per IP per 60 seconds. Requires `RESEND_API_KEY`, `RESEND_FROM_EMAIL`, and `CONTACT_TO_EMAIL` environment variables.
+- **SEO** — `layout.tsx` exports rich `metadata` (Open Graph, Twitter Cards, JSON-LD structured data) and `viewport`. Generated `robots.ts`, `sitemap.ts`, and `manifest.ts` live in `src/app/`.
+- **Security headers** — configured in `next.config.ts` via `headers()`: `X-Content-Type-Options`, `X-Frame-Options`, `X-XSS-Protection`, `Referrer-Policy`, `Permissions-Policy`.
+- **Domain** — deployed at [hamdyx.dev](https://hamdyx.dev) via Vercel.
 
 ## Conventions
 

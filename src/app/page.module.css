@@ -1,1 +1,7 @@
 /* Page-level styles are handled by individual section components */
+
+.loading {
+  min-height: 100vh;
+  max-width: 900px;
+  margin: 0 auto;
+}

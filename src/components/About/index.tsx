@@ -49,13 +49,13 @@ export default function About() {
                 </div>
               </div>
             </div>
-            <Button type="primary" size="large" icon={<DownloadOutlined />} className={styles.resumeButton} href="/resume.pdf">
+            <Button type="primary" size="large" icon={<DownloadOutlined />} className={styles.resumeButton} href="/Ahmed_Hamdy_Resume.pdf" download>
               Download Resume
             </Button>
           </div>
           <div className={styles.imageContainer}>
             <div className={styles.imagePlaceholder}>
-              <Image src="/profile-pic--removebg.webp" alt="Ahmed Hamdy" width={450} height={450} className={styles.profileImage} />
+              <Image src="/profile-pic--removebg.webp" alt="Ahmed Hamdy" width={450} height={450} loading="lazy" className={styles.profileImage} />
             </div>
           </div>
         </div>

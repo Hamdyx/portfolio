@@ -12,6 +12,7 @@ const NAV_LINKS = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
   { label: 'Experience', href: '#experience' },
+  { label: 'Skills', href: '#skills' },
   { label: 'Projects', href: '#projects' },
   { label: 'Contact', href: '#contact' },
 ];
@@ -44,7 +45,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={styles.nav}>
+    <nav className={styles.nav} aria-label="Main navigation">
       <div className={styles.container}>
         <a className={styles.brand} href="#home">
           AH
@@ -56,7 +57,7 @@ export default function Navbar() {
             </a>
           ))}
           <Button type="text" shape="circle" icon={isDark ? <SunOutlined /> : <MoonOutlined />} onClick={toggle} aria-label="Toggle theme" />
-          <Button type="primary" shape="round" href="/resume.pdf">
+          <Button type="primary" shape="round" href="/Ahmed_Hamdy_Resume.pdf">
             Resume
           </Button>
         </div>
@@ -73,7 +74,7 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            <Button type="primary" block href="/resume.pdf">
+            <Button type="primary" block href="/Ahmed_Hamdy_Resume.pdf">
               Resume
             </Button>
             <Button type="default" block icon={isDark ? <SunOutlined /> : <MoonOutlined />} onClick={toggle}>
