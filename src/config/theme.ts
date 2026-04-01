@@ -27,5 +27,6 @@ export const darkTheme: ThemeConfig = {
     colorTextBase: '#dee5ff',
     colorLink: '#a3a6ff',
     colorLinkHover: '#8387ff',
+    colorTextLightSolid: '#060e20',
   },
 };
