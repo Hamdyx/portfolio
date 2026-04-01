@@ -2,6 +2,8 @@
 
 Personal portfolio website for **Ahmed Hamdy** — Software Engineer with 6+ years of experience building web applications across fintech, travel, and enterprise domains.
 
+**Live:** [hamdyx.dev](https://hamdyx.dev)
+
 ## Tech Stack
 
 | Category        | Technology                                |
@@ -23,10 +25,15 @@ src/
 ├── app/
 │   ├── api/
 │   │   └── contact/
-│   │       └── route.ts    # POST handler — sends email via Resend
-│   ├── layout.tsx          # Root layout (AntdRegistry + ConfigProvider + fonts)
+│   │       └── route.ts    # POST handler — sends email via Resend (rate-limited)
+│   ├── layout.tsx          # Root layout (ThemeProvider + fonts + metadata + viewport)
 │   ├── page.tsx            # Home — composes all section components
-│   ├── globals.css         # Global resets and base styles
+│   ├── globals.css         # Global resets, theme variables, and base styles
+│   ├── loading.tsx         # Skeleton loading state
+│   ├── not-found.tsx       # Custom 404 page
+│   ├── robots.ts           # robots.txt generation
+│   ├── sitemap.ts          # sitemap.xml generation
+│   ├── manifest.ts         # PWA web manifest
 │   └── page.module.css
 ├── components/
 │   ├── Navbar/             # Fixed nav with mobile drawer
@@ -38,7 +45,7 @@ src/
 │   ├── Contact/            # Contact form with Resend email submission
 │   └── Footer/             # Social links and copyright
 ├── config/
-│   └── theme.ts            # Ant Design theme tokens
+│   └── theme.ts            # Ant Design theme tokens (light + dark)
 ├── constants/
 │   ├── personal.ts         # Name, tagline, social handles
 │   ├── experience.ts       # Work history entries
@@ -48,7 +55,7 @@ src/
 │   └── useTheme.ts         # Theme hook
 └── providers/
     ├── ThemeContext.ts      # Theme context definition
-    └── ThemeProvider.tsx    # Theme context provider
+    └── ThemeProvider.tsx    # Theme provider (AntdRegistry + ConfigProvider)
 ```
 
 Each component follows the pattern: `ComponentName/index.tsx` + `ComponentName/ComponentName.module.css`.
@@ -91,7 +98,7 @@ Copy `.env.example` to `.env.local` and fill in the values:
 
 ## Deployment
 
-Hosted on **Vercel**. Add the same environment variables in Vercel → Settings → Environment Variables.
+Hosted on **Vercel** at [hamdyx.dev](https://hamdyx.dev). Add the same environment variables in Vercel → Settings → Environment Variables.
 
 ## License
 
