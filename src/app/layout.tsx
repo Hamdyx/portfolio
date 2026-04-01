@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 
 import { Analytics } from '@vercel/analytics/next';
 import { Geist, Geist_Mono } from 'next/font/google';
@@ -84,6 +84,15 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#4f46e5' },
+    { media: '(prefers-color-scheme: dark)', color: '#060e20' },
+  ],
+};
+
 const themeInitScript = `
 (function() {
   try {
@@ -123,7 +132,7 @@ export default function RootLayout({
       <body>
         <ThemeProvider>
           <Navbar />
-          <main>{children}</main>
+          <main role="main">{children}</main>
           <Footer />
         </ThemeProvider>
         <Analytics />

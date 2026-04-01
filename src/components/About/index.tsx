@@ -55,7 +55,7 @@ export default function About() {
           </div>
           <div className={styles.imageContainer}>
             <div className={styles.imagePlaceholder}>
-              <Image src="/profile-pic--removebg.webp" alt="Ahmed Hamdy" width={450} height={450} className={styles.profileImage} />
+              <Image src="/profile-pic--removebg.webp" alt="Ahmed Hamdy" width={450} height={450} loading="lazy" className={styles.profileImage} />
             </div>
           </div>
         </div>

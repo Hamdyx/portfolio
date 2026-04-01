@@ -45,7 +45,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={styles.nav}>
+    <nav className={styles.nav} aria-label="Main navigation">
       <div className={styles.container}>
         <a className={styles.brand} href="#home">
           AH

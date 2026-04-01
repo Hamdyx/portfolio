@@ -79,6 +79,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 72px;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html,
@@ -92,4 +93,5 @@ body {
   background: var(--color-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
