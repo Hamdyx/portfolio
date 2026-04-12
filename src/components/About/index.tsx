@@ -61,7 +61,8 @@ export default function About() {
                 src="/profile-pic--removedbg.webp"
                 alt="Ahmed Hamdy — Software Engineer"
                 width={450}
-                height={450}
+                height={492}
+                sizes="(max-width: 768px) 300px, 450px"
                 loading="lazy"
                 className={styles.profileImage}
               />
