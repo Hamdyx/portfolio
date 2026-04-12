@@ -37,7 +37,7 @@ export default function Projects() {
                 cover={
                   project.image ? (
                     <div className={styles.cover}>
-                      <Image src={project.image} alt={project.title} fill sizes="(max-width: 768px) 100vw, 33vw" />
+                      <Image src={project.image} alt={`Screenshot of ${project.title} project`} fill sizes="(max-width: 768px) 100vw, 33vw" />
                     </div>
                   ) : (
                     <div className={styles.cover} style={{ background: GRADIENTS[index % GRADIENTS.length] }}>

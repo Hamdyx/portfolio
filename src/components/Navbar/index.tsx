@@ -47,7 +47,7 @@ export default function Navbar() {
   return (
     <nav className={styles.nav} aria-label="Main navigation">
       <div className={styles.container}>
-        <a className={styles.brand} href="#home">
+        <a className={styles.brand} href="#home" aria-label="Ahmed Hamdy — Home">
           AH
         </a>
         <div className={styles.links}>
@@ -57,11 +57,11 @@ export default function Navbar() {
             </a>
           ))}
           <Button type="text" shape="circle" icon={isDark ? <SunOutlined /> : <MoonOutlined />} onClick={toggle} aria-label="Toggle theme" />
-          <Button type="primary" shape="round" href="/Ahmed_Hamdy_Resume.pdf">
+          <Button type="primary" shape="round" href="/Ahmed_Hamdy_Resume.pdf" target="_blank" rel="noopener noreferrer">
             Resume
           </Button>
         </div>
-        <Button className={styles.menuButton} type="text" icon={<MenuOutlined />} onClick={() => setDrawerOpen(true)} />
+        <Button className={styles.menuButton} type="text" icon={<MenuOutlined />} onClick={() => setDrawerOpen(true)} aria-label="Open menu" />
         <Drawer title="Navigation" placement="right" onClose={() => setDrawerOpen(false)} open={drawerOpen} closeIcon={<CloseOutlined />}>
           <div className={styles.drawerLinks}>
             {NAV_LINKS.map(link => (
@@ -74,7 +74,7 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            <Button type="primary" block href="/Ahmed_Hamdy_Resume.pdf">
+            <Button type="primary" block href="/Ahmed_Hamdy_Resume.pdf" target="_blank" rel="noopener noreferrer">
               Resume
             </Button>
             <Button type="default" block icon={isDark ? <SunOutlined /> : <MoonOutlined />} onClick={toggle}>

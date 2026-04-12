@@ -131,8 +131,10 @@ export default function RootLayout({
       </head>
       <body>
         <ThemeProvider>
-          <Navbar />
-          <main role="main">{children}</main>
+          <header>
+            <Navbar />
+          </header>
+          <main>{children}</main>
           <Footer />
         </ThemeProvider>
         <Analytics />

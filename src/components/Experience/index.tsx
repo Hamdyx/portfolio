@@ -22,7 +22,7 @@ export default function Experience() {
           <Title className={styles.itemTitle} level={3}>
             {item.title}
           </Title>
-          <Text className={item.current ? styles.periodCurrent : styles.period}>{item.period}</Text>
+          <time className={item.current ? styles.periodCurrent : styles.period}>{item.period}</time>
         </div>
         <Text className={styles.company}>{item.company}</Text>
         <Paragraph className={styles.description}>{item.description}</Paragraph>
