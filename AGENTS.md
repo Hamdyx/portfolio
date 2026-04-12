@@ -8,6 +8,43 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 # hamdyx — Ahmed Hamdy's Portfolio
 
+## Mandatory Pre-Flight Checks
+
+Before writing or modifying ANY code, the agent MUST:
+
+1. **Verify API currency** — check official docs or `node_modules/<pkg>/` for the exact version installed (see `package.json`). Never rely on training data for API shapes.
+2. **Scan for deprecations** — run `yarn build` after changes and treat every warning as a blocker. If a component, prop, hook, or function is deprecated, use its documented replacement.
+3. **Read `node_modules/next/dist/docs/`** — Next.js 16 has breaking changes vs. 15/14. Always validate routing, metadata, caching, and config APIs against the bundled docs.
+4. **Consult Ant Design 6 changelog** — Ant Design 6 removed or renamed several v5 APIs. When in doubt, verify against `node_modules/antd/es/` exports.
+
+## Code Quality Principles (Always Apply)
+
+These are **defaults** — follow them on every change without being asked:
+
+- **Clean code** — small, single-responsibility functions. Descriptive names. No dead code. No commented-out code.
+- **TypeScript strict mode** — no `any`, no `@ts-ignore`, no non-null assertions (`!`) unless truly unavoidable. Prefer narrowing and type guards.
+- **No manual memoization** — React Compiler is enabled. Never add `useMemo`, `useCallback`, or `React.memo`.
+- **Semantic HTML** — use correct elements (`<nav>`, `<main>`, `<section>`, `<time>`, `<button>`, etc.). Add ARIA attributes only when native semantics fall short.
+- **Accessibility** — all interactive elements must be keyboard-reachable, all images must have meaningful `alt` text (or `alt=""` / `aria-hidden` for decoration), form inputs need labels.
+- **No over-engineering** — don't add abstractions, helpers, or error handling beyond what is needed. Don't wrap Ant Design components unnecessarily.
+- **Security** — validate and sanitize at system boundaries. Follow OWASP Top 10. Never expose secrets in client code.
+
+## Deprecation & Version Awareness
+
+| Package                       | Installed | Key Notes                                                                                                                                                 |
+| ----------------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `next`                        | 16.2.1    | App Router only. No Pages Router. `next/font/google` for fonts. Turbopack dev server.                                                                     |
+| `react` / `react-dom`         | 19.2.4    | React 19 — `use()`, Actions, `useFormStatus`, `useOptimistic` are stable. Class component lifecycle is legacy.                                            |
+| `antd`                        | 6.3.4     | v6 — no v4/v5 deprecated APIs (`Form.create`, `Icon` from `antd`, `getFieldDecorator`). Destructure sub-components, don't use dot notation in App Router. |
+| `@ant-design/icons`           | 6.1.1     | Named icon imports only. No default import.                                                                                                               |
+| `@ant-design/nextjs-registry` | 1.3.0     | Single `<AntdRegistry>` in `ThemeProvider.tsx` only.                                                                                                      |
+| `react-icons`                 | 5.6.0     | Tree-shakeable named imports (`react-icons/fa`, `react-icons/si`, etc.).                                                                                  |
+| `resend`                      | 6.9.4     | Use `Resend` class constructor. Check for v6 API changes.                                                                                                 |
+| `@vercel/analytics`           | 2.0.1     | `<Analytics />` component in layout.                                                                                                                      |
+| `typescript`                  | 5.9.3     | Use modern syntax: `satisfies`, `using`, template literal types where appropriate.                                                                        |
+
+**When unsure about any API:** check the package's `node_modules/<pkg>/` types or README before writing code. Do NOT guess or rely on memory.
+
 ## Tech Stack
 
 - **Framework:** Next.js 16 (App Router only — no Pages Router)
@@ -128,3 +165,12 @@ import { theme } from '@/config/theme';
 
 import styles from './page.module.css';
 ```
+
+### Common Pitfalls (Do NOT)
+
+- Do NOT use `next/head` — use the `metadata` export or `generateMetadata` in App Router.
+- Do NOT use `getServerSideProps` / `getStaticProps` — these are Pages Router only.
+- Do NOT import from `antd/lib/...` — use `antd` or `antd/es/...` only.
+- Do NOT use `<Image>` with `layout` prop — use `width`/`height` or `fill` (Next.js 16 Image API).
+- Do NOT add `"use server"` to files that don't contain Server Actions.
+- Do NOT create barrel files (`index.ts` re-exports) — import directly from the source module.

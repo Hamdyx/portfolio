@@ -22,7 +22,7 @@ export default function Skills() {
               <Col key={skill.name} xs={8} sm={6} md={4}>
                 <Card className={styles.card} hoverable>
                   <div className={styles.cardContent}>
-                    <Icon className={styles.skillIcon} />
+                    <Icon className={styles.skillIcon} aria-hidden="true" />
                     <Text className={styles.skillName}>{skill.name}</Text>
                   </div>
                 </Card>

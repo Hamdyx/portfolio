@@ -45,7 +45,9 @@ export default function About() {
                 </div>
                 <div>
                   <Text className={styles.detailLabel}>Email</Text>
-                  <Text className={styles.detailValue}>{PERSONAL.email}</Text>
+                  <a href={`mailto:${PERSONAL.email}`} className={styles.detailLink}>
+                    <Text className={styles.detailValue}>{PERSONAL.email}</Text>
+                  </a>
                 </div>
               </div>
             </div>
@@ -55,7 +57,15 @@ export default function About() {
           </div>
           <div className={styles.imageContainer}>
             <div className={styles.imagePlaceholder}>
-              <Image src="/profile-pic--removebg.webp" alt="Ahmed Hamdy" width={450} height={450} loading="lazy" className={styles.profileImage} />
+              <Image
+                src="/profile-pic--removedbg.webp"
+                alt="Ahmed Hamdy — Software Engineer"
+                width={450}
+                height={492}
+                sizes="(max-width: 768px) 300px, 450px"
+                loading="lazy"
+                className={styles.profileImage}
+              />
             </div>
           </div>
         </div>

@@ -76,6 +76,16 @@
   color: var(--color-text) !important;
 }
 
+.detailLink {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s;
+}
+
+.detailLink:hover {
+  color: var(--color-primary);
+}
+
 .resumeButton {
   margin-top: 48px;
   height: 52px !important;
