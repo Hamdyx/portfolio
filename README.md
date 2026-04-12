@@ -26,9 +26,9 @@ src/
 │   ├── api/
 │   │   └── contact/
 │   │       └── route.ts    # POST handler — sends email via Resend (rate-limited)
-│   ├── layout.tsx          # Root layout (ThemeProvider + fonts + metadata + viewport)
+│   ├── layout.tsx          # Root layout (ThemeProvider + fonts + metadata + viewport + JSON-LD)
 │   ├── page.tsx            # Home — composes all section components
-│   ├── globals.css         # Global resets, theme variables, and base styles
+│   ├── globals.css         # Global resets, theme variables (light + dark), base styles
 │   ├── loading.tsx         # Skeleton loading state
 │   ├── not-found.tsx       # Custom 404 page
 │   ├── robots.ts           # robots.txt generation
@@ -47,10 +47,10 @@ src/
 ├── config/
 │   └── theme.ts            # Ant Design theme tokens (light + dark)
 ├── constants/
-│   ├── personal.ts         # Name, tagline, social handles
-│   ├── experience.ts       # Work history entries
-│   ├── skills.ts           # Skills with categories
-│   └── projects.ts         # Project titles, descriptions, URLs
+│   ├── personal.ts         # Name, tagline, social handles, email, website
+│   ├── experience.ts       # Work history entries (ExperienceItem[])
+│   ├── skills.ts           # Skills with categories (SkillItem[])
+│   └── projects.ts         # Project titles, descriptions, URLs (ProjectItem[])
 ├── hooks/
 │   └── useTheme.ts         # Theme hook
 └── providers/
@@ -88,13 +88,22 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 
 ## Environment Variables
 
-Copy `.env.example` to `.env.local` and fill in the values:
+Create a `.env.local` file in the project root:
 
 | Variable            | Description                                                      |
 | ------------------- | ---------------------------------------------------------------- |
 | `RESEND_API_KEY`    | API key from [resend.com](https://resend.com/api-keys)           |
 | `RESEND_FROM_EMAIL` | Verified sender address (or `onboarding@resend.dev` for testing) |
 | `CONTACT_TO_EMAIL`  | Email where contact form messages are delivered                  |
+
+## Updating Content
+
+All display data is in `src/constants/`. Edit these files to update the site content — no component changes needed:
+
+- **Projects** → `src/constants/projects.ts`
+- **Skills** → `src/constants/skills.ts`
+- **Experience** → `src/constants/experience.ts`
+- **Personal info** → `src/constants/personal.ts`
 
 ## Deployment
 
