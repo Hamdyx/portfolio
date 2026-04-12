@@ -82,8 +82,8 @@
   transition: color 0.2s;
 }
 
-.detailLink:hover {
-  color: var(--color-primary);
+.detailLink:hover .detailValue {
+  color: var(--color-primary) !important;
 }
 
 .resumeButton {
