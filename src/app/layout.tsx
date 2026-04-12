@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     description: 'Software Engineer with 6+ years of experience building scalable web applications with React, TypeScript, and modern frontend architecture.',
     images: [
       {
-        url: '/profile-pic.webp',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Ahmed Hamdy — Software Engineer',
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     title: 'Ahmed Hamdy | Software Engineer',
     description: 'Software Engineer with 6+ years of experience building scalable web applications with React, TypeScript, and modern frontend architecture.',
     creator: '@ma_niguh',
-    images: ['/profile-pic.webp'],
+    images: ['/og-image.png'],
   },
   alternates: {
     canonical: 'https://hamdyx.dev',
