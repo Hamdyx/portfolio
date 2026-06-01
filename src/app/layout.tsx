@@ -19,6 +19,7 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const metadata: Metadata = {
   metadataBase: new URL('https://hamdyx.dev'),
   title: 'Ahmed Hamdy | Software Engineer — React, TypeScript & Frontend Architecture',
@@ -82,8 +83,17 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  icons: {
+    icon: [
+      { url: '/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
+    shortcut: '/android-chrome-192x192.png',
+  },
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -120,7 +130,9 @@ export default function RootLayout({
               '@type': 'Person',
               name: 'Ahmed Hamdy',
               url: 'https://hamdyx.dev',
-              jobTitle: 'Software Engineer',
+              email: 'a.hamdy.nig@gmail.com',
+              image: 'https://hamdyx.dev/profile-pic.webp',
+              jobTitle: 'Frontend Software Engineer',
               worksFor: { '@type': 'Organization', name: 'Secret Escapes' },
               sameAs: ['https://github.com/Hamdyx', 'https://linkedin.com/in/hamdyx', 'https://x.com/ma_niguh'],
               knowsAbout: ['React', 'TypeScript', 'Next.js', 'Node.js', 'Frontend Architecture'],
