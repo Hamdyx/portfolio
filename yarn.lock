@@ -5,7 +5,7 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
-"@ant-design/colors@npm:^8.0.0, @ant-design/colors@npm:^8.0.1":
+"@ant-design/colors@npm:^8.0.1":
   version: 8.0.1
   resolution: "@ant-design/colors@npm:8.0.1"
   dependencies:
@@ -53,29 +53,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ant-design/icons-svg@npm:^4.4.0, @ant-design/icons-svg@npm:^4.4.2":
+"@ant-design/icons-svg@npm:^4.4.2":
   version: 4.4.2
   resolution: "@ant-design/icons-svg@npm:4.4.2"
   checksum: 10c0/d08f051824599850efcd691a67b0ee602ee886f23fe04e77890b083a0343cde72560317e3909fd029f999df00aef7b57142c863326fff7293251d9162828079b
   languageName: node
   linkType: hard
 
-"@ant-design/icons@npm:6.1.1":
-  version: 6.1.1
-  resolution: "@ant-design/icons@npm:6.1.1"
-  dependencies:
-    "@ant-design/colors": "npm:^8.0.0"
-    "@ant-design/icons-svg": "npm:^4.4.0"
-    "@rc-component/util": "npm:^1.3.0"
-    clsx: "npm:^2.1.1"
-  peerDependencies:
-    react: ">=16.0.0"
-    react-dom: ">=16.0.0"
-  checksum: 10c0/1df4dfdce6f29572e7b0104c37db7134efa29ad71d07ae6038cdad0db6a12c0e836c2d34ec2ec515038b67630c9fc1d0551de7c67634344240c3b53f51748fad
-  languageName: node
-  linkType: hard
-
-"@ant-design/icons@npm:^6.2.3":
+"@ant-design/icons@npm:6.2.5, @ant-design/icons@npm:^6.2.3":
   version: 6.2.5
   resolution: "@ant-design/icons@npm:6.2.5"
   dependencies:
@@ -3183,7 +3168,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "hamdyx@workspace:."
   dependencies:
-    "@ant-design/icons": "npm:6.1.1"
+    "@ant-design/icons": "npm:6.2.5"
     "@ant-design/nextjs-registry": "npm:1.3.0"
     "@types/node": "npm:25.9.1"
     "@types/react": "npm:19.2.16"

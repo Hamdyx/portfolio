@@ -26,7 +26,7 @@ export default function About() {
                 maintain shared component libraries for partner-facing tools.
               </Paragraph>
               <Paragraph className={styles.text}>
-                I have a proven track record reducing bundle sizes by 60%, improving load times by 50%, and driving 100% unit test coverage across enterprise
+                I have a proven track record reducing bundle sizes by 60%, improving load times by ~20%, and driving 100% unit test coverage across enterprise
                 platforms. I&apos;m experienced in CI/CD pipelines, accessibility (WCAG), and AI-assisted development — including authoring custom Copilot
                 agents for end-to-end agentic PR delivery.
               </Paragraph>

@@ -132,7 +132,7 @@ export default function RootLayout({
               url: 'https://hamdyx.dev',
               email: 'a.hamdy.nig@gmail.com',
               image: 'https://hamdyx.dev/profile-pic.webp',
-              jobTitle: 'Software Engineer',
+              jobTitle: 'Frontend Software Engineer',
               worksFor: { '@type': 'Organization', name: 'Secret Escapes' },
               sameAs: ['https://github.com/Hamdyx', 'https://linkedin.com/in/hamdyx', 'https://x.com/ma_niguh'],
               knowsAbout: ['React', 'TypeScript', 'Next.js', 'Node.js', 'Frontend Architecture'],
