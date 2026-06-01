@@ -36,6 +36,9 @@ import {
   SiTailwindcss,
   SiTypescript,
   SiVercel,
+  SiVitest,
+  SiVite,
+  SiWebpack,
 } from 'react-icons/si';
 import { TbSeo } from 'react-icons/tb';
 
@@ -74,10 +77,13 @@ export const SKILLS: SkillItem[] = [
 
   // Testing
   { name: 'Jest', icon: SiJest },
+  { name: 'Vitest', icon: SiVitest },
   { name: 'Cypress', icon: SiCypress },
 
   // DevOps & Cloud
   { name: 'Git', icon: SiGit },
+  { name: 'Vite', icon: SiVite },
+  { name: 'Webpack', icon: SiWebpack },
   { name: 'Docker', icon: SiDocker },
   { name: 'AWS', icon: FaAws },
   { name: 'GitHub Actions', icon: SiGithubactions },

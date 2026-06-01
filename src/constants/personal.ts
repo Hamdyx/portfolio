@@ -1,7 +1,8 @@
 export const PERSONAL = {
   name: 'Ahmed Hamdy',
-  tagline: 'Software Engineer',
-  subtitle: 'Building performant, scalable web applications with React, TypeScript, and modern frontend architecture.',
+  tagline: 'Frontend Software Engineer',
+  subtitle:
+    'Building scalable React and TypeScript applications in monorepo architectures, with a proven track record in performance optimization, CI/CD workflows, and AI-assisted development.',
   website: 'https://hamdyx.dev',
   location: 'Cairo, Egypt',
   email: 'a.hamdy.nig@gmail.com',
