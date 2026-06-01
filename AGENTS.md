@@ -31,17 +31,17 @@ These are **defaults** — follow them on every change without being asked:
 
 ## Deprecation & Version Awareness
 
-| Package                       | Installed | Key Notes                                                                                                                                                 |
-| ----------------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `next`                        | 16.2.1    | App Router only. No Pages Router. `next/font/google` for fonts. Turbopack dev server.                                                                     |
-| `react` / `react-dom`         | 19.2.4    | React 19 — `use()`, Actions, `useFormStatus`, `useOptimistic` are stable. Class component lifecycle is legacy.                                            |
-| `antd`                        | 6.3.4     | v6 — no v4/v5 deprecated APIs (`Form.create`, `Icon` from `antd`, `getFieldDecorator`). Destructure sub-components, don't use dot notation in App Router. |
-| `@ant-design/icons`           | 6.1.1     | Named icon imports only. No default import.                                                                                                               |
-| `@ant-design/nextjs-registry` | 1.3.0     | Single `<AntdRegistry>` in `ThemeProvider.tsx` only.                                                                                                      |
-| `react-icons`                 | 5.6.0     | Tree-shakeable named imports (`react-icons/fa`, `react-icons/si`, etc.).                                                                                  |
-| `resend`                      | 6.9.4     | Use `Resend` class constructor. Check for v6 API changes.                                                                                                 |
-| `@vercel/analytics`           | 2.0.1     | `<Analytics />` component in layout.                                                                                                                      |
-| `typescript`                  | 5.9.3     | Use modern syntax: `satisfies`, `using`, template literal types where appropriate.                                                                        |
+| Package                       | Installed | Key Notes                                                                                                                                                                                                                  |
+| ----------------------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `next`                        | 16.2.6    | App Router only. No Pages Router. `next/font/google` for fonts. Turbopack dev server.                                                                                                                                      |
+| `react` / `react-dom`         | 19.2.4    | React 19 — `use()`, Actions, `useFormStatus`, `useOptimistic` are stable. Class component lifecycle is legacy.                                                                                                             |
+| `antd`                        | 6.4.3     | v6 — no v4/v5 deprecated APIs (`Form.create`, `Icon` from `antd`, `getFieldDecorator`). Destructure sub-components, don't use dot notation in App Router.                                                                  |
+| `@ant-design/icons`           | 6.1.1     | Named icon imports only. No default import.                                                                                                                                                                                |
+| `@ant-design/nextjs-registry` | 1.3.0     | Single `<AntdRegistry>` in `ThemeProvider.tsx` only.                                                                                                                                                                       |
+| `react-icons`                 | 5.6.0     | Tree-shakeable named imports (`react-icons/fa`, `react-icons/si`, etc.).                                                                                                                                                   |
+| `resend`                      | 6.12.4    | Use `Resend` class constructor. Check for v6 API changes.                                                                                                                                                                  |
+| `@vercel/analytics`           | 2.0.1     | `<Analytics />` component in layout.                                                                                                                                                                                       |
+| `typescript`                  | 6.0.3     | Use modern syntax: `satisfies`, `using`, template literal types where appropriate. Note: `@typescript-eslint` does not officially support TS 6 yet — unsupported-version warning from ESLint is expected and non-blocking. |
 
 **When unsure about any API:** check the package's `node_modules/<pkg>/` types or README before writing code. Do NOT guess or rely on memory.
 
