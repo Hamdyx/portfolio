@@ -4,18 +4,10 @@ import { CloseOutlined, MenuOutlined, MoonOutlined, SunOutlined } from '@ant-des
 import { Button, Drawer } from 'antd';
 import { useEffect, useState } from 'react';
 
+import { NAV_LINKS } from '@/constants/navigation';
 import { useTheme } from '@/hooks/useTheme';
 
 import styles from './Navbar.module.css';
-
-const NAV_LINKS = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Contact', href: '#contact' },
-];
 
 const SECTION_IDS = NAV_LINKS.map(link => link.href.slice(1));
 
