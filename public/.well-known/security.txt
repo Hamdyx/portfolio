@@ -1,0 +1,4 @@
+Contact: mailto:a.hamdy.nig@gmail.com
+Expires: 2027-08-10T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://hamdyx.dev/.well-known/security.txt

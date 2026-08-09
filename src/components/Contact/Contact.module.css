@@ -31,6 +31,19 @@
   border-radius: 16px;
 }
 
+/* Honeypot field — visually hidden but present in the DOM so bots fill it */
+.honeypot {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .submitButton {
   height: 56px !important;
   font-weight: 700 !important;
