@@ -1,6 +1,7 @@
 import type { IconType } from 'react-icons';
 
 import { FaAws } from 'react-icons/fa';
+import { RiOpenaiFill } from 'react-icons/ri';
 import {
   SiAntdesign,
   SiBlockchaindotcom,
@@ -23,7 +24,6 @@ import {
   SiMysql,
   SiNextdotjs,
   SiNodedotjs,
-  SiOpenai,
   SiPostgresql,
   SiPython,
   SiReact,
@@ -100,6 +100,6 @@ export const SKILLS: SkillItem[] = [
 
   // AI Tools
   { name: 'GitHub Copilot', icon: SiGithubcopilot },
-  { name: 'ChatGPT', icon: SiOpenai },
+  { name: 'ChatGPT', icon: RiOpenaiFill },
   { name: 'Claude', icon: SiClaude },
 ];
