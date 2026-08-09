@@ -1,7 +1,7 @@
 export interface ProjectItem {
   title: string;
   description: string;
-  image?: string;
+  image: string;
   demoUrl?: string;
   githubUrl?: string;
 }
@@ -54,7 +54,7 @@ export const PROJECTS: ProjectItem[] = [
     description:
       'A cryptography utility that generates randomized secure passwords and applies cipher-based encryption with configurable key parameters. Built to demonstrate practical understanding of data protection principles including symmetric encryption, key derivation, and secure randomness generation.',
     image: '/projects/encryption-tool.webp',
-    demoUrl: 'https://hamdyx-encryption.netlify.app/',
+    demoUrl: 'https://encryption-teal.vercel.app/',
     githubUrl: 'https://github.com/Hamdyx/Encryption',
   },
   {

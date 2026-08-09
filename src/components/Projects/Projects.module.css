@@ -68,14 +68,6 @@
   transform: scale(1.05);
 }
 
-.coverText {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.3);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
 .cardTitle {
   font-weight: 700 !important;
   margin-bottom: 12px !important;
