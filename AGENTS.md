@@ -8,6 +8,26 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 # hamdyx — Ahmed Hamdy's Portfolio
 
+**Claude Code is the coding agent for this repo.** All changes are made through it. Large efforts are planned once, up front, and split into phases — each phase is then executed in a fresh session from a prompt provided by the user. A session does not carry work over into the next phase on its own.
+
+## Git & Session Workflow
+
+Applies to every session, without being asked:
+
+- **Never commit to `main`.** Start every task on its own branch cut from `main`.
+- **One branch per task**, named `<type>/<slug>` where `<type>` is one of `feat`, `fix`, `chore`, `docs`, `perf`, `security`, `seo`, `refactor`, `ci` (e.g. `docs/claude-workflow-instructions`).
+- **PRs target `main`.**
+- **Stay in scope.** A session implements ONLY its assigned scope. Unrelated problems found along the way are *reported* to the user, not fixed.
+- **Verify before asking.** `yarn build` (every warning is a blocker) and `yarn lint` must both pass BEFORE presenting the work.
+- **ALWAYS ask permission before committing.** Show the diff and wait — the user reviews it first. No exceptions.
+- **After approval:** commit with a short, lowercase, imperative message matching the repo's style (e.g. `update resume`), including the Claude co-author trailer:
+
+  ```
+  Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
+  ```
+
+  Then push the branch, open the PR with `gh` following `.github/pull_request_template.md`, and give the user the PR URL. **The user merges, not the agent.**
+
 ## Mandatory Pre-Flight Checks
 
 Before writing or modifying ANY code, the agent MUST:
@@ -36,7 +56,7 @@ These are **defaults** — follow them on every change without being asked:
 | `next`                        | 16.2.6    | App Router only. No Pages Router. `next/font/google` for fonts. Turbopack dev server.                                                                                                                                      |
 | `react` / `react-dom`         | 19.2.4    | React 19 — `use()`, Actions, `useFormStatus`, `useOptimistic` are stable. Class component lifecycle is legacy.                                                                                                             |
 | `antd`                        | 6.4.3     | v6 — no v4/v5 deprecated APIs (`Form.create`, `Icon` from `antd`, `getFieldDecorator`). Destructure sub-components, don't use dot notation in App Router.                                                                  |
-| `@ant-design/icons`           | 6.1.1     | Named icon imports only. No default import.                                                                                                                                                                                |
+| `@ant-design/icons`           | 6.2.5     | Named icon imports only. No default import.                                                                                                                                                                                |
 | `@ant-design/nextjs-registry` | 1.3.0     | Single `<AntdRegistry>` in `ThemeProvider.tsx` only.                                                                                                                                                                       |
 | `react-icons`                 | 5.6.0     | Tree-shakeable named imports (`react-icons/fa`, `react-icons/si`, etc.).                                                                                                                                                   |
 | `resend`                      | 6.12.4    | Use `Resend` class constructor. Check for v6 API changes.                                                                                                                                                                  |
@@ -44,6 +64,8 @@ These are **defaults** — follow them on every change without being asked:
 | `typescript`                  | 6.0.3     | Use modern syntax: `satisfies`, `using`, template literal types where appropriate. Note: `@typescript-eslint` does not officially support TS 6 yet — unsupported-version warning from ESLint is expected and non-blocking. |
 
 **When unsure about any API:** check the package's `node_modules/<pkg>/` types or README before writing code. Do NOT guess or rely on memory.
+
+**Dependency-upgrade PRs MUST update this table** — the `Installed` column has to match `package.json` in the same PR.
 
 ## Tech Stack
 
