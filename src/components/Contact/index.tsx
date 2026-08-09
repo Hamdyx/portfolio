@@ -15,6 +15,7 @@ interface ContactFormValues {
   email: string;
   subject: string;
   message: string;
+  company?: string;
 }
 
 export default function Contact() {
@@ -35,15 +36,19 @@ export default function Contact() {
       });
 
       if (!response.ok) {
-        const text = await response.text();
-        const data = text ? JSON.parse(text) : {};
-        throw new Error(data.error || 'Something went wrong.');
+        const data: unknown = await response.json().catch(() => null);
+        const message =
+          data !== null && typeof data === 'object' && 'error' in data && typeof data.error === 'string'
+            ? data.error
+            : 'Failed to send message. Please try again.';
+        setError(message);
+        return;
       }
 
       form.resetFields();
       setSubmitted(true);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to send message. Please try again.');
+    } catch {
+      setError('Failed to send message. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -81,7 +86,14 @@ export default function Contact() {
               )}
               <Row gutter={24}>
                 <Col xs={24} md={12}>
-                  <Item name="name" label="Full Name" rules={[{ required: true, message: 'Please enter your name' }]}>
+                  <Item
+                    name="name"
+                    label="Full Name"
+                    rules={[
+                      { required: true, message: 'Please enter your name' },
+                      { max: 100, message: 'Name must be 100 characters or fewer' },
+                    ]}
+                  >
                     <Input placeholder="John Doe" autoComplete="name" disabled={loading} />
                   </Item>
                 </Col>
@@ -92,17 +104,35 @@ export default function Contact() {
                     rules={[
                       { required: true, message: 'Please enter your email' },
                       { type: 'email', message: 'Please enter a valid email' },
+                      { max: 254, message: 'Email must be 254 characters or fewer' },
                     ]}
                   >
                     <Input placeholder="john@example.com" autoComplete="email" disabled={loading} />
                   </Item>
                 </Col>
               </Row>
-              <Item name="subject" label="Subject" rules={[{ required: true, message: 'Please enter a subject' }]}>
+              <Item
+                name="subject"
+                label="Subject"
+                rules={[
+                  { required: true, message: 'Please enter a subject' },
+                  { max: 150, message: 'Subject must be 150 characters or fewer' },
+                ]}
+              >
                 <Input placeholder="Project Inquiry" autoComplete="off" disabled={loading} />
               </Item>
-              <Item name="message" label="Message" rules={[{ required: true, message: 'Please enter your message' }]}>
+              <Item
+                name="message"
+                label="Message"
+                rules={[
+                  { required: true, message: 'Please enter your message' },
+                  { max: 5000, message: 'Message must be 5000 characters or fewer' },
+                ]}
+              >
                 <TextArea rows={4} placeholder="How can I help you?" disabled={loading} />
+              </Item>
+              <Item name="company" className={styles.honeypot} aria-hidden="true">
+                <Input tabIndex={-1} autoComplete="off" />
               </Item>
               <Item>
                 <Button type="primary" htmlType="submit" block size="large" icon={<SendOutlined />} className={styles.submitButton} loading={loading}>
