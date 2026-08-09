@@ -13,12 +13,13 @@ const securityHeaders = [
     // - script-src: Theme init script in layout.tsx prevents flash of wrong theme on load
     key: 'Content-Security-Policy',
     value:
-      "default-src 'self'; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://va.vercel-scripts.com; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'",
+      "default-src 'self'; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://va.vercel-scripts.com; font-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'",
   },
 ];
 
 const nextConfig: NextConfig = {
   reactCompiler: true,
+  poweredByHeader: false,
   async headers() {
     return [
       {
