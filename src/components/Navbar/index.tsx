@@ -53,8 +53,23 @@ export default function Navbar() {
             Resume
           </Button>
         </div>
-        <Button className={styles.menuButton} type="text" icon={<MenuOutlined />} onClick={() => setDrawerOpen(true)} aria-label="Open menu" />
-        <Drawer title="Navigation" placement="right" onClose={() => setDrawerOpen(false)} open={drawerOpen} closeIcon={<CloseOutlined />}>
+        <Button
+          className={styles.menuButton}
+          type="text"
+          icon={<MenuOutlined />}
+          onClick={() => setDrawerOpen(true)}
+          aria-label="Open menu"
+          aria-expanded={drawerOpen}
+          aria-controls="mobile-nav-drawer"
+        />
+        <Drawer
+          id="mobile-nav-drawer"
+          title="Navigation"
+          placement="right"
+          onClose={() => setDrawerOpen(false)}
+          open={drawerOpen}
+          closeIcon={<CloseOutlined />}
+        >
           <div className={styles.drawerLinks}>
             {NAV_LINKS.map(link => (
               <a
