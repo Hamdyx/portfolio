@@ -3,19 +3,14 @@
 import { Timeline, Typography } from 'antd';
 
 import { EXPERIENCE } from '@/constants/experience';
-import { useTheme } from '@/hooks/useTheme';
 
 import styles from './Experience.module.css';
 
 const { Title, Text, Paragraph } = Typography;
 
 export default function Experience() {
-  const { isDark } = useTheme();
-  const activeColor = isDark ? '#a3a6ff' : '#4f46e5';
-  const inactiveColor = isDark ? '#40485d' : '#c7c4d8';
-
   const timelineItems = EXPERIENCE.map(item => ({
-    color: item.current ? activeColor : inactiveColor,
+    color: item.current ? 'var(--color-timeline-active)' : 'var(--color-timeline-inactive)',
     content: (
       <div className={styles.item}>
         <div className={styles.itemHeader}>

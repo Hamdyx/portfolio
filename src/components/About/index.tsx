@@ -20,16 +20,11 @@ export default function About() {
               About Me
             </Title>
             <div className={styles.bio}>
-              <Paragraph className={styles.text}>
-                I&apos;m a Frontend Software Engineer with 6+ years building scalable React and TypeScript applications in monorepo architectures across
-                fintech, travel, and enterprise domains. Currently at Secret Escapes, I ship features across a Yarn 4 monorepo of React + TypeScript SPAs and
-                maintain shared component libraries for partner-facing tools.
-              </Paragraph>
-              <Paragraph className={styles.text}>
-                I have a proven track record reducing bundle sizes by 60%, improving load times by ~20%, and driving 100% unit test coverage across enterprise
-                platforms. I&apos;m experienced in CI/CD pipelines, accessibility (WCAG), and AI-assisted development — including authoring custom Copilot
-                agents for end-to-end agentic PR delivery.
-              </Paragraph>
+              {PERSONAL.bio.map(paragraph => (
+                <Paragraph key={paragraph} className={styles.text}>
+                  {paragraph}
+                </Paragraph>
+              ))}
             </div>
             <div className={styles.details}>
               <div className={styles.detailItem}>

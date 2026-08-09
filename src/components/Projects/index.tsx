@@ -10,12 +10,6 @@ import styles from './Projects.module.css';
 
 const { Title, Paragraph, Text } = Typography;
 
-const GRADIENTS = [
-  'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-  'linear-gradient(135deg, #4f46e5 0%, #3525cd 100%)',
-  'linear-gradient(135deg, #004d70 0%, #006693 100%)',
-];
-
 export default function Projects() {
   return (
     <section className={styles.section} id="projects">
@@ -29,21 +23,15 @@ export default function Projects() {
           </div>
         </div>
         <Row gutter={[24, 24]}>
-          {PROJECTS.map((project, index) => (
+          {PROJECTS.map(project => (
             <Col key={project.title} xs={24} md={8}>
               <Card
                 className={styles.card}
                 hoverable
                 cover={
-                  project.image ? (
-                    <div className={styles.cover}>
-                      <Image src={project.image} alt={`Screenshot of ${project.title} project`} fill sizes="(max-width: 768px) 100vw, 33vw" />
-                    </div>
-                  ) : (
-                    <div className={styles.cover} style={{ background: GRADIENTS[index % GRADIENTS.length] }}>
-                      <span className={styles.coverText}>{project.title}</span>
-                    </div>
-                  )
+                  <div className={styles.cover}>
+                    <Image src={project.image} alt={`Screenshot of ${project.title} project`} fill sizes="(max-width: 768px) 100vw, 33vw" />
+                  </div>
                 }
               >
                 <Title className={styles.cardTitle} level={3}>
